@@ -1,12 +1,12 @@
 export default function LogoLarge() {
     return (
-        <div className="w-fit [clip-path:polygon(0_0,100%_0,100%_calc(100%-64px),calc(100%-64px)_100%,0_100%)] bg-linear-to-tl from-primary via-secondary to-tertiary p-0.5">
-            <h1 className="bg-linear-to-tl from-logo-bg-start to-logo-bg-end px-12 pt-10 pb-2 [clip-path:polygon(0_0,100%_0,100%_calc(100%-64px),calc(100%-64px)_100%,0_100%)]">
+        <div className="w-fit [clip-path:polygon(0_0,100%_0,100%_calc(100%-48px),calc(100%-48px)_100%,0_100%)] bg-linear-to-tl from-primary via-secondary to-tertiary p-0.5">
+            <h1 className="bg-linear-to-tl from-logo-bg-start to-logo-bg-end px-9 pt-7 pb-1.5 [clip-path:polygon(0_0,100%_0,100%_calc(100%-48px),calc(100%-48px)_100%,0_100%)]">
                 <span className="sr-only">Zytronium WebWorks</span>
 
                 <svg
                     viewBox="0 0 1200 290"
-                    className="block h-[140px] w-auto overflow-visible text-background"
+                    className="block h-[105px] w-auto overflow-visible text-background"
                     aria-hidden="true"
                 >
                     <defs>
@@ -18,7 +18,6 @@ export default function LogoLarge() {
 
                         <mask id="zytronium-outline-mask" maskUnits="userSpaceOnUse">
                             <rect width="1200" height="260" fill="black" />
-
                             <text
                                 x="600"
                                 y="128"
@@ -34,7 +33,6 @@ export default function LogoLarge() {
                             >
                                 Zytronium
                             </text>
-
                             <text
                                 x="600"
                                 y="218"
