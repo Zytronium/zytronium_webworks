@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Aquire';
+  src: url('/fonts/Aquire.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gltp Starion';
+  src: url('/fonts/GltpStarion.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d0925; /* dark purple */
+  --foreground: #e3f0f0; /* white with hint of cyan */
+  --primary:    #00b2ff; /* light blue */
+  --secondary:  #6107bb; /* violet-purple */
+  --tertiary:   #d00341; /* electric pink */
+  --accent:     #0f7cae; /* darker shade of primary */
+
+
+  --primary-darker:   #008fcc; /* light blue */
+  --secondary-darker: #49068c; /* violet-purple */
+  --tertiary-darker:  #D10240CC; /* electric pink */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary:    var(--primary);
+  --color-secondary:  var(--secondary);
+  --color-tertiary:   var(--tertiary);
+  --color-accent:     var(--accent);
+  --color-logo-bg-start: #290f59;
+  --color-logo-bg-end: #410a29;
+  --color-logo-bg-start-border: #1c0840;
+  --color-logo-bg-end-border: #2e051c;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gltp Starion', Arial, Helvetica, sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--background);
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border-left: 1px solid var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary), var(--secondary), var(--tertiary));
+  border-radius: 6px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--primary-darker), var(--secondary-darker), var(--tertiary-darker));
 }
