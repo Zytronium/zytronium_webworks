@@ -198,7 +198,7 @@ export default function HeroSection() {
                             <span className="absolute -top-px -left-px w-2.5 h-2.5 border-l-[1.5px] border-t-[1.5px] border-primary" />
                             <span className="absolute -bottom-px -right-px w-2.5 h-2.5 border-r-[1.5px] border-b-[1.5px] border-tertiary" />
 
-                            <span className="relative z-10">See Our Work</span>
+                            <span className="relative z-10">View Portfolio</span>
                         </a>
                     </div>
                 </div>
