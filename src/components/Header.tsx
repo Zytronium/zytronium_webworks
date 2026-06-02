@@ -32,7 +32,7 @@ export default function Header() {
                     {href: "/#about", label: "About"},
                     {href: "/#showcase", label: "Showcase"},
                     {href: "/#testimonials", label: "Testimonials"},
-                    {href: "/#faq", label: "FAQ"},
+                    {href: "/pricing", label: "Pricing"},
                 ].map(({href, label}, i) => (
                     <div key={href} className="flex items-center">
                         {i > 0 && (
