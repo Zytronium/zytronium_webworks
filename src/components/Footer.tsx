@@ -124,8 +124,6 @@ export default function Footer() {
                                            transition-colors duration-200"
                                 style={{ clipPath: "polygon(8px 0%,100% 0%,100% calc(100% - 8px),calc(100% - 8px) 100%,0% 100%,0% 8px)" }}
                             >
-                                {/* Pulsing dot */}
-                                <span className="w-1 h-1 rounded-full bg-primary animate-pulse flex-shrink-0" />
 
                                 {/* Hover fill */}
                                 <span
@@ -157,7 +155,6 @@ export default function Footer() {
                             © {new Date().getFullYear()} Zytronium. All rights reserved.
                         </p>
                         <div className="flex items-center gap-1 order-1 sm:order-2">
-                            <span className="w-1 h-1 rounded-full bg-primary/50 animate-pulse" />
                             <span className="text-foreground/30 text-xs tracking-widest uppercase ml-1">
                                 Built for the future
                             </span>

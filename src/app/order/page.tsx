@@ -58,7 +58,7 @@ export default function PricingPage() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log({selectedScope, selectedFeatures, formData});
-        alert("Form submitted! (This is a demo - no actual submission)");
+        alert("Form not submitted. (This feature is not implemented yet)");
     };
 
     return (
