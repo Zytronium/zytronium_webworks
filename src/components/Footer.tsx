@@ -52,7 +52,7 @@ export default function Footer() {
 
                         {/* Column 1 — Logo + tagline */}
                         <div className="sm:col-span-2 lg:col-span-1">
-                            <div className="scale-[0.55] origin-top-left -mb-8">
+                            <div className="scale-[0.8] sm:scale-[0.6] origin-top-left -mb-2 sm:-mb-10">
                                 <LogoLarge />
                             </div>
                             <p className="text-foreground/55 text-sm leading-relaxed max-w-xs">

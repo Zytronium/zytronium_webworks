@@ -26,7 +26,7 @@ export default function LogoLarge() {
                                 fontSize="180"
                                 fontWeight="400"
                                 letterSpacing="0.03em"
-                                fill="black"
+                                fill="white"
                                 stroke="white"
                                 strokeWidth="8"
                                 paintOrder="stroke"
@@ -41,7 +41,7 @@ export default function LogoLarge() {
                                 fontSize="56"
                                 fontWeight="400"
                                 letterSpacing="0.45em"
-                                fill="black"
+                                fill="white"
                                 stroke="white"
                                 strokeWidth="4"
                                 paintOrder="stroke"
@@ -61,7 +61,7 @@ export default function LogoLarge() {
                         fontSize="180"
                         fontWeight="400"
                         letterSpacing="0.03em"
-                        fill="currentColor"
+                        fill="black"
                     >
                         Zytronium
                     </text>
@@ -74,7 +74,7 @@ export default function LogoLarge() {
                         fontSize="56"
                         fontWeight="400"
                         letterSpacing="0.45em"
-                        fill="currentColor"
+                        fill="white"
                     >
                         WebWorks
                     </text>
