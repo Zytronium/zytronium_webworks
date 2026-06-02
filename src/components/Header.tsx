@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import LogoLarge from "@/components/LogoLarge";
 import Link from "next/link";
@@ -26,9 +26,7 @@ export default function Header() {
                     style={{ background: "linear-gradient(90deg, #0d0925 0%, #1a0a3a 50%, #2a0520 100%)" }}
                 >
                     {/* Scanline shimmer */}
-                    <div className="pointer-events-none absolute top-0 h-px w-[60%]
-                                    bg-linear-to-r from-transparent via-primary/30 to-transparent
-                                    animate-[scan_6s_linear_infinite]" />
+                    <div className="pointer-events-none absolute top-0 h-px w-[60%] bg-linear-to-r from-transparent via-primary/30 to-transparent animate-[scan_6s_linear_infinite]" />
 
                     {/* Subtle horizontal grid lines */}
                     <div
@@ -51,16 +49,9 @@ export default function Header() {
                             {i > 0 && <span className="w-px h-3.5 bg-secondary/30 mx-1" />}
                             <Link
                                 href={href}
-                                className="relative group px-3 py-2
-                                           text-md font-semibold tracking-[2px] uppercase
-                                           text-foreground/50 hover:text-foreground
-                                           transition-colors duration-200"
-                            >
+                                className="relative group px-3 py-2 text-md font-semibold tracking-[2px] uppercase text-foreground/50 hover:text-foreground transition-colors duration-200">
                                 {label}
-                                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-px
-                                                 bg-linear-to-r from-transparent via-primary to-transparent
-                                                 scale-x-0 group-hover:scale-x-100
-                                                 transition-transform duration-300 ease-out" />
+                                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-px bg-linear-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
                             </Link>
                         </div>
                     ))}
@@ -68,9 +59,7 @@ export default function Header() {
                     {/* CTA - clipped-corner button */}
                     <a
                         href="/order"
-                        className="relative group ml-4 px-5 py-2.5
-                                   text-md font-bold tracking-[2.5px] uppercase text-primary
-                                   transition-colors duration-200"
+                        className="relative group ml-4 px-5 py-2.5 text-md font-bold tracking-[2.5px] uppercase text-primary transition-colors duration-200"
                         style={{ clipPath: "polygon(8px 0%,100% 0%,100% calc(100% - 8px),calc(100% - 8px) 100%,0% 100%,0% 8px)" }}
                     >
                         <span className="absolute left-[-13px] top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-primary animate-pulse" />
@@ -96,8 +85,7 @@ export default function Header() {
                     aria-label={menuOpen ? "Close menu" : "Open menu"}
                     aria-expanded={menuOpen}
                     onClick={() => setMenuOpen((v) => !v)}
-                    className="sm:hidden flex-1 flex items-center justify-end px-5
-                               text-foreground/70 hover:text-foreground transition-colors"
+                    className="sm:hidden flex-1 flex items-center justify-end px-5 text-foreground/70 hover:text-foreground transition-colors"
                     style={{ background: "linear-gradient(90deg, #0d0925 0%, #1a0a3a 50%, #2a0520 100%)" }}
                 >
                     {/* Animated hamburger → X */}
@@ -136,10 +124,7 @@ export default function Header() {
                             key={href}
                             href={href}
                             onClick={() => setMenuOpen(false)}
-                            className="px-6 py-3.5 text-sm font-semibold tracking-[2px] uppercase
-                                       text-foreground/50 hover:text-foreground hover:bg-primary/5
-                                       border-b border-primary/10 last:border-b-0
-                                       transition-colors duration-150"
+                            className="px-6 py-3.5 text-sm font-semibold tracking-[2px] uppercase text-foreground/50 hover:text-foreground hover:bg-primary/5 border-b border-primary/10 last:border-b-0 transition-colors duration-150"
                         >
                             {label}
                         </Link>
@@ -149,10 +134,7 @@ export default function Header() {
                     <a
                         href="/order"
                         onClick={() => setMenuOpen(false)}
-                        className="mx-6 my-3 px-5 py-2.5 flex items-center justify-center gap-2
-                                   text-sm font-bold tracking-[2.5px] uppercase text-primary
-                                   border border-primary/40 hover:border-primary/85 hover:bg-primary/5
-                                   transition-colors duration-200"
+                        className="mx-6 my-3 px-5 py-2.5 flex items-center justify-center gap-2 text-sm font-bold tracking-[2.5px] uppercase text-primary border border-primary/40 hover:border-primary/85 hover:bg-primary/5 transition-colors duration-200"
                         style={{ clipPath: "polygon(8px 0%,100% 0%,100% calc(100% - 8px),calc(100% - 8px) 100%,0% 100%,0% 8px)" }}
                     >
                         <span className="w-1 h-1 rounded-full bg-primary animate-pulse" />

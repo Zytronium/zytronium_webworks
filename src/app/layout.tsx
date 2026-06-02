@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import LogoLarge from '@/components/LogoLarge';
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import GridOverlay from "@/components/GridOverlay";
 
 export const metadata: Metadata = {
   title: "Zytronium WebWorks",
@@ -14,8 +16,10 @@ export default function RootLayout({ children, }: Readonly<{
   return (
     <html lang="en" className={"h-full antialiased"} >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-      <Header/>
+        <Header/>
+        <GridOverlay/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
