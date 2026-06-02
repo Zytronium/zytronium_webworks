@@ -125,12 +125,12 @@ export default function PricingPage() {
                         {/* Features Selection */}
                         <div className="p-6 border border-secondary/30 rounded-lg"
                              style={{background: "rgba(97,7,187,0.03)"}}>
-                            <h3 className="text-2xl font-bold mb-4 text-secondary">Additional Features</h3>
+                            <h3 className="text-2xl font-bold mb-4 text-secondary-lighter">Additional Features</h3>
                             <div className="space-y-4">
                                 {Object.keys(additionalFeatures).map((feature) => (
                                     <label key={feature}
                                            className="flex items-start gap-4 cursor-pointer group p-3 rounded-lg hover:bg-secondary/5 transition-colors">
-                                        <div className="relative flex-shrink-0 mt-1">
+                                        <div className="relative shrink-0 mt-1">
                                             <input
                                                 type="checkbox"
                                                 checked={selectedFeatures.includes(feature)}
@@ -158,7 +158,7 @@ export default function PricingPage() {
                                                     className="block text-foreground group-hover:text-secondary transition-colors font-semibold">
                                                     {feature}
                                                 </span>
-                                                <span className="text-secondary font-bold text-sm">
+                                                <span className="text-secondary-lighter font-bold text-sm">
                                                     {additionalFeatures[feature as keyof typeof additionalFeatures] === 0
                                                         ? "Custom Quote"
                                                         : additionalFeatures[feature as keyof typeof additionalFeatures] < 0

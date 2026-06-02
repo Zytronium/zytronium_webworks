@@ -11,7 +11,23 @@ export default function PricingPage() {
                     </h1>
                 </div>
 
-                {/* Pricing Cards */}
+                {/* Promotional Banner */}
+                <div className="mb-16">
+                    <div className="max-w-4xl mx-auto p-6 border border-tertiary/50 rounded-lg text-center"
+                         style={{background: "linear-gradient(135deg, rgba(208,3,65,0.1), rgba(97,7,187,0.1))"}}>
+                        <p className="text-2xl font-bold text-tertiary">
+                            First 5 clients may save up to 25%!<sup className="text-tertiary-muted">*</sup>
+                        </p>
+                        <p className="text-tertiary-muted text-xs mt-2">
+                            <a href="#discount-details" className="hover:underline cursor-pointer">
+                                See below for details.
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                {/* Scope Pricing Cards */}
+                <h2 className="text-3xl font-bold mb-6 text-center">Project Scope</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                     {Object.entries(pricingMap).map(([scope, [min, max]]) => (
                         <div
@@ -46,8 +62,8 @@ export default function PricingPage() {
                                     background: "linear-gradient(135deg, rgba(97,7,187,0.05), rgba(208,3,65,0.05))"
                                 }}
                             >
-                                <h4 className="font-semibold mb-1 text-foreground">{feature}</h4>
-                                <p className="text-secondary font-bold mb-2">
+                                <h4 className="font-semibold mb-1 text-secondary-lighter">{feature}</h4>
+                                <p className="text-foreground font-bold mb-2">
                                     {price === 0 ? "Custom Quote" : price < 0 ? `+${Math.abs(price)}%` : `+$${price.toLocaleString()}`}
                                 </p>
                                 <p className="text-foreground/70 text-sm leading-relaxed mt-auto">
@@ -62,7 +78,7 @@ export default function PricingPage() {
                 <div className="max-w-3xl mx-auto text-center">
                     <div className="p-8 border border-accent/40 rounded-lg mb-8"
                          style={{background: "linear-gradient(135deg, rgba(0,178,255,0.05), rgba(97,7,187,0.05))"}}>
-                        <h2 className="text-3xl font-bold mb-4 text-accent">Ready to Get Started?</h2>
+                        <h2 className="text-3xl font-bold mb-4 text-primary">Ready to Get Started?</h2>
                         <p className="text-foreground/70 text-lg mb-6 leading-relaxed">
                             Choose your project scope and additional features to get a personalized quote.
                         </p>
@@ -82,12 +98,22 @@ export default function PricingPage() {
                             <span className="relative z-10">Build Your Quote</span>
                         </a>
                     </div>
-                    <div className="p-4 border border-accent/40 rounded-lg bg-accent/5">
+                    <div className="p-4 border border-accent/40 rounded-lg bg-accent/5 mb-8">
                         <p className="text-foreground/70 text-sm leading-relaxed">
-                            <strong className="text-accent">Note:</strong>{" "}Final pricing is subject to change based
-                            on requested features,
-                            project complexity, and the number of orders currently in queue.
-                            You&apos;ll be provided with a detailed quote after your requirements are reviewed.
+                            <strong className="text-primary-muted">Note:</strong>{" "}
+                            Final pricing is subject to change based on requested features, project
+                            complexity, and the number of orders currently in queue. You&apos;ll be
+                            provided with a detailed quote after your requirements are reviewed.
+                        </p>
+                    </div>
+                    <div id="discount-details" className="p-4 border border-tertiary-darker/40 rounded-lg bg-tertiary-darker/5">
+                        <p className="text-foreground/70 text-xs leading-relaxed">
+                            <strong><span className="text-tertiary-muted text-lg">*</span>:</strong>{" "}
+                            The first three customers to sign a project agreement will receive 25% off
+                            their project total. The next two customers will receive 15% off. Discounts
+                            are applied before taxes (if taxes are applicable in your location) and are
+                            subject to change or withdrawal at any time. Discounts do not apply to future
+                            paid revisions. This offer is limited to one project per customer or business.
                         </p>
                     </div>
                 </div>

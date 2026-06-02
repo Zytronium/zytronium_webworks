@@ -4,7 +4,7 @@ export const pricingMap = {
     "Custom Multi-Page Site": [3000, 8000],
     "Custom Business Web App": [5000, 30000]
 }
-export const additionalFeatures = {
+export const additionalFeatures = { /* 0 = custom quote; < 0 = +n% (on top of total, not a discount) */
     "Custom Admin Panel": 2500,
     "Content Management System": 2000,
     "Interactive Scroll Effects": 200,
@@ -24,3 +24,5 @@ export const featureDescriptions: Record<string, string> = {
     "Expedite Development": "Focus more on development speed while maintaining high quality and functionality.",
     "Other": "Have something specific in mind? You'll be provided a custom quote for your needs."
 }
+
+/* First 3 customers get 25% off and next 2 get 15% off! */
