@@ -1,12 +1,14 @@
 export default function LogoLarge() {
     return (
         <div className="w-fit [clip-path:polygon(0_0,100%_0,100%_calc(100%-48px),calc(100%-48px)_100%,0_100%)] bg-linear-to-tl from-primary via-secondary to-tertiary p-0.5">
-            <h1 className="bg-linear-to-tl from-logo-bg-start to-logo-bg-end px-9 pt-7 pb-1.5 [clip-path:polygon(0_0,100%_0,100%_calc(100%-48px),calc(100%-48px)_100%,0_100%)]">
+            <h1 className="[clip-path:polygon(0_0,100%_0,100%_calc(100%-48px),calc(100%-48px)_100%,0_100%)]
+                           bg-linear-to-br from-background via-[#1a0a3a] to-[#2a0520]
+                           px-9 pt-7 pb-1.5">
                 <span className="sr-only">Zytronium WebWorks</span>
 
                 <svg
                     viewBox="0 0 1200 290"
-                    className="block h-[105px] w-auto overflow-visible text-background"
+                    className="block h-26.25 w-auto overflow-visible text-background"
                     aria-hidden="true"
                 >
                     <defs>
