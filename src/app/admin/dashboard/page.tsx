@@ -86,7 +86,7 @@ export default function AdminDashboard() {
     }, {} as Record<string, number>);
 
     return (
-        <main className="min-h-screen">
+        <main className="min-h-full">
             {/* Background grid */}
             <div className="fixed inset-0 pointer-events-none"
                  style={{
@@ -277,11 +277,11 @@ function Section({ title, children }: { title: string; children: React.ReactNode
     );
 }
 
-function Field({ label, value }: { label: string; value: string }) {
+function Field({ label, value, blur }: { label: string; value: string, blur?: boolean }) {
     return (
         <div>
             <span className="block text-foreground/40 text-xs uppercase tracking-widest mb-0.5">{label}</span>
-            <span className="text-foreground/80 text-sm">{value}</span>
+            <span className={`text-foreground/80 text-sm ${blur ? "blur-md" : ""}`}>{value}</span>
         </div>
     );
 }

@@ -29,7 +29,7 @@ export default function AdminLoginPage() {
     };
 
     return (
-        <main className="min-h-screen flex items-center justify-center px-4">
+        <main className="min-h-full flex items-center justify-center px-4">
             {/* Background grid */}
             <div className="fixed inset-0 pointer-events-none"
                  style={{

@@ -14,14 +14,14 @@ export async function POST(req: NextRequest) {
         } = body;
 
         // Basic validation
-        if (!name || !email || !phone || !location || !business || !scope || !projectDescription || !domain || !hosting || !showcase) {
+        if (!name || !email || !location || !business || !scope || !projectDescription || !domain || !hosting || !showcase) {
             return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
         }
 
         const newOrder = await db.insert(orders).values({
             name,
             email,
-            phone,
+            phone: phone ?? "",
             location,
             business,
             scope,
