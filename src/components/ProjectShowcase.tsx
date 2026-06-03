@@ -485,7 +485,7 @@ export default function ProjectShowcase() {
 
                 {/* ── Section heading ── */}
                 <div className="mb-12">
-                    <SectionLabel>Portfolio</SectionLabel>
+                    <SectionLabel>Showcase</SectionLabel>
                     <h2
                         className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground"
                         style={{ fontFamily: "Aquire, sans-serif" }}
