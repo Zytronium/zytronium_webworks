@@ -30,6 +30,8 @@
   --secondary-lighter: #9f43fa; /* violet-purple */
   --tertiary-lighter: #f64e81; /* electric pink */
 
+  --secondary-bright: #b56aff; /* even brighter variant for business card readability */
+
   --primary-muted: #83b2c6; /* light blue */
   --secondary-muted: #9f73c9; /* violet-purple */
   --tertiary-muted: #ca7690; /* electric pink */
@@ -48,6 +50,7 @@
   --color-primary-lighter:   var(--primary-lighter);
   --color-secondary-lighter: var(--secondary-lighter);
   --color-tertiary-lighter:  var(--tertiary-lighter);
+  --color-secondary-bright:  var(--secondary-bright);
   --color-primary-muted:     var(--primary-muted);
   --color-secondary-muted:   var(--secondary-muted);
   --color-tertiary-muted:    var(--tertiary-muted);
