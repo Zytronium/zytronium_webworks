@@ -83,7 +83,8 @@ export default function PricingPage() {
                         {/* Scope Selection */}
                         <div className="p-6 border border-primary/30 rounded-lg"
                              style={{background: "rgba(0,178,255,0.03)"}}>
-                            <h3 className="text-2xl font-bold mb-4 text-primary">Select Your Scope</h3>
+                            <h3 className="text-2xl font-bold text-primary">Select Your Scope</h3>
+                            <p className="text-sm text-foreground/80 mb-4">What kind of project and what scale are you thinking of?</p>
                             <div className="space-y-4">
                                 {Object.keys(pricingMap).map((scope) => (
                                     <label key={scope}
@@ -119,7 +120,7 @@ export default function PricingPage() {
                                                     {pricingMap[scope as keyof typeof pricingMap][0] === 0 && pricingMap[scope as keyof typeof pricingMap][1] == 0 ? "Custom Quote" : `$${pricingMap[scope as keyof typeof pricingMap][0].toLocaleString()} - $${pricingMap[scope as keyof typeof pricingMap][1].toLocaleString()}`}
                                                 </span>
                                             </div>
-                                            <span className="block text-foreground/60 text-sm">
+                                            <span className="block text-foreground/80 text-sm">
                                                 {scopeDescriptions[scope]}
                                             </span>
                                         </div>
@@ -131,7 +132,8 @@ export default function PricingPage() {
                         {/* Features Selection */}
                         <div className="p-6 border border-secondary/30 rounded-lg"
                              style={{background: "rgba(97,7,187,0.03)"}}>
-                            <h3 className="text-2xl font-bold mb-4 text-secondary-lighter">Additional Features</h3>
+                            <h3 className="text-2xl font-bold text-secondary-lighter">Additional Features</h3>
+                            <p className="text-sm text-foreground/80 mb-4">What kind of extra features would you like added?</p>
                             <div className="space-y-4">
                                 {Object.keys(additionalFeatures).map((feature) => (
                                     <label key={feature}
@@ -172,7 +174,7 @@ export default function PricingPage() {
                                                             : `+$${additionalFeatures[feature as keyof typeof additionalFeatures].toLocaleString()}`}
                                                 </span>
                                             </div>
-                                            <span className="block text-foreground/60 text-sm">
+                                            <span className="block text-foreground/80 text-sm">
                                                 {featureDescriptions[feature]}
                                             </span>
                                         </div>
@@ -192,7 +194,7 @@ export default function PricingPage() {
                                     </span>
                                     {selectedScope && (
                                         <div className="text-right">
-                                            <div className="text-4xl font-bold text-accent">
+                                            <div className="text-4xl font-bold mask-text bg-linear-to-b from-primary to-accent bg-clip-text text-transparent">
                                                 {isCustomQuoteScope()
                                                     ? "Custom Quote"
                                                     : `$${calculateTotal().min.toLocaleString()} - $${calculateTotal().max.toLocaleString()}`}
