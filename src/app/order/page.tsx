@@ -11,7 +11,12 @@ export default function PricingPage() {
         name: "",
         email: "",
         phone: "",
-        message: ""
+        location: "",
+        business: "",
+        projectDescription: "",
+        domain: "",
+        hosting: "",
+        showcase: "",
     });
 
     const handleFeatureToggle = (feature: string) => {
@@ -211,7 +216,7 @@ export default function PricingPage() {
                         {/* Contact Information */}
                         <div className="p-6 border border-tertiary/30 rounded-lg"
                              style={{background: "rgba(208,3,65,0.03)"}}>
-                            <h3 className="text-2xl font-bold mb-4 text-tertiary">Contact Information</h3>
+                            <h3 className="text-2xl font-bold mb-4 text-tertiary">Project & Contact Details</h3>
                             <div className="space-y-4">
                                 <div>
                                     <label className="block text-foreground/80 mb-2">Name *</label>
@@ -221,7 +226,8 @@ export default function PricingPage() {
                                         required
                                         value={formData.name}
                                         onChange={handleInputChange}
-                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground"
+                                        placeholder="John Doe"
+                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground placeholder:text-foreground/40"
                                     />
                                 </div>
                                 <div>
@@ -232,7 +238,8 @@ export default function PricingPage() {
                                         required
                                         value={formData.email}
                                         onChange={handleInputChange}
-                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground"
+                                        placeholder="john.doe@example.com"
+                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground placeholder:text-foreground/40"
                                     />
                                 </div>
                                 <div>
@@ -242,18 +249,110 @@ export default function PricingPage() {
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleInputChange}
-                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground"
+                                        placeholder="(123) 456-7890"
+                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground placeholder:text-foreground/40"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-foreground/80 mb-2">Message and Order Details</label>
-                                    <textarea
-                                        name="message"
-                                        value={formData.message}
+                                    <label className="block text-foreground/80 mb-2">Where are you located? *</label>
+                                    <input
+                                        type="text"
+                                        name="location"
+                                        required
+                                        value={formData.location}
                                         onChange={handleInputChange}
-                                        rows={4}
-                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground resize-none"
+                                        placeholder="i.e. Tulsa, Oklahoma"
+                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground placeholder:text-foreground/40"
                                     />
+                                </div>
+                                <div>
+                                    <label className="block text-foreground/80 mb-2">Business or organization *</label>
+                                    <input
+                                        type="text"
+                                        name="business"
+                                        required
+                                        value={formData.business}
+                                        onChange={handleInputChange}
+                                        placeholder="Name of associated entity if applicable"
+                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground placeholder:text-foreground/40"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-foreground/80 mb-2">
+                                        {selectedFeatures.includes("Other")
+                                            ? "Describe your project in detail, including any custom features. *"
+                                            : "Describe your project in detail. *"}
+                                    </label>
+                                    <textarea
+                                        name="projectDescription"
+                                        value={formData.projectDescription}
+                                        onChange={handleInputChange}
+                                        required
+                                        rows={4}
+                                        placeholder="Purpose, description, deadline, features, etc."
+                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground placeholder:text-foreground/40 resize-none"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-foreground/80 mb-2">Do you own a domain/URL to host the
+                                        website on? If so, what is it? *</label>
+                                    <input
+                                        type="text"
+                                        name="domain"
+                                        required
+                                        value={formData.domain}
+                                        onChange={handleInputChange}
+                                        placeholder="Yes, www.example.com."
+                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground placeholder:text-foreground/40"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-foreground/80 mb-2">Do you have website hosting plans
+                                        figured out yet? If so, what will you host with?*</label>
+                                    <input
+                                        type="text"
+                                        name="hosting"
+                                        required
+                                        value={formData.hosting}
+                                        onChange={handleInputChange}
+                                        placeholder="No, we will need help with hosting."
+                                        className="w-full px-4 py-2 bg-background border border-foreground/20 rounded focus:border-primary focus:outline-none text-foreground placeholder:text-foreground/40"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-foreground/80 mb-3">Will you allow the final product to
+                                        be showcased on this website? *</label>
+                                    <div className="space-y-2">
+                                        {["Yes", "No", "Undecided"].map((option) => (
+                                            <label key={option}
+                                                   className="flex items-center gap-3 cursor-pointer group">
+                                                <input
+                                                    type="radio"
+                                                    name="showcase"
+                                                    value={option}
+                                                    required
+                                                    checked={formData.showcase === option}
+                                                    onChange={handleInputChange}
+                                                    className="sr-only"
+                                                />
+                                                <div
+                                                    className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
+                                                        formData.showcase === option
+                                                            ? 'border-primary bg-primary'
+                                                            : 'border-primary/40 group-hover:border-primary/60'
+                                                    }`}>
+                                                    {formData.showcase === option && (
+                                                        <div
+                                                            className="w-full h-full rounded-full border-2 border-background scale-50"/>
+                                                    )}
+                                                </div>
+                                                <span
+                                                    className="text-foreground group-hover:text-primary transition-colors">
+                                                    {option}
+                                                </span>
+                                            </label>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
