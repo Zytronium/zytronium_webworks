@@ -18,6 +18,7 @@ export default function PricingPage() {
         hosting: "",
         showcase: "",
     });
+    const [submitting, setSubmitting] = useState(false);
 
     const handleFeatureToggle = (feature: string) => {
         setSelectedFeatures(prev =>
@@ -66,10 +67,53 @@ export default function PricingPage() {
         return min === 0 && max === 0;
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log({selectedScope, selectedFeatures, formData});
-        alert("Form not submitted. (This feature is not implemented yet)");
+        setSubmitting(true);
+
+        const { min, max } = calculateTotal();
+
+        try {
+            const res = await fetch("/api/orders", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    ...formData,
+                    scope: selectedScope,
+                    features: selectedFeatures,
+                    estimatedMin: isCustomQuoteScope() ? null : min,
+                    estimatedMax: isCustomQuoteScope() ? null : max,
+                }),
+            });
+
+            if (!res.ok) {
+                const data = await res.json();
+                alert(`Failed to submit: ${data.error ?? "Unknown error."}`);
+                return;
+            }
+
+            // Reset form on success
+            setSelectedScope("");
+            setSelectedFeatures([]);
+            setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                location: "",
+                business: "",
+                projectDescription: "",
+                domain: "",
+                hosting: "",
+                showcase: "",
+            });
+
+            alert("Your request has been submitted! You'll hear back soon.");
+        } catch (err) {
+            console.error(err);
+            alert("Something went wrong. Please try again.");
+    } finally {
+        setSubmitting(false);
+        }
     };
 
     return (
@@ -370,7 +414,8 @@ export default function PricingPage() {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full relative group px-8 py-4 text-lg font-bold tracking-[2px] uppercase text-primary transition-all duration-300"
+                            disabled={submitting}
+                            className="w-full relative group px-8 py-4 text-lg font-bold tracking-[2px] uppercase text-primary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                             style={{
                                 clipPath: "polygon(12px 0%,100% 0%,100% calc(100% - 12px),calc(100% - 12px) 100%,0% 100%,0% 12px)"
                             }}
@@ -381,7 +426,9 @@ export default function PricingPage() {
                             <span
                                 className="absolute inset-0 border-2 border-primary/40 group-hover:border-primary transition-colors duration-300"
                                 style={{clipPath: "inherit"}}/>
-                            <span className="relative z-10">Submit Request</span>
+                            <span className="relative z-10">
+                                {submitting ? "Submitting..." : "Submit Request"}
+                            </span>
                         </button>
                     </form>
                 </div>
