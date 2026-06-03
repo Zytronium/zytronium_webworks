@@ -28,7 +28,7 @@ export default function PricingPage() {
 
                 {/* Scope Pricing Cards */}
                 <h2 className="text-3xl font-bold mb-6 text-center">Project Scope</h2>
-                <div className="grid grid-cols-1 mdsm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                     {Object.entries(pricingMap).map(([scope, [min, max]]) => (
                         <div
                             key={scope}
@@ -57,7 +57,7 @@ export default function PricingPage() {
                 <div className="mb-16">
                     <h2 className="text-3xl font-bold mb-6 text-center">Additional Features</h2>
                     <div
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
                         {Object.entries(additionalFeatures).map(([feature, price]) => (
                             <div
                                 key={feature}
@@ -66,8 +66,8 @@ export default function PricingPage() {
                                     background: "linear-gradient(135deg, rgba(97,7,187,0.05), rgba(208,3,65,0.05))"
                                 }}
                             >
-                                <h4 className="font-semibold mb-1 text-secondary-lighter">{feature}</h4>
-                                <p className="text-foreground font-bold mb-2">
+                                <h4 className="font-semibold mb-1 text-lg text-secondary-lighter">{feature}</h4>
+                                <p className="text-foreground font-bold mb-2 text-2xl">
                                     {price === 0 ? "Custom Quote" : price < 0 ? `+${Math.abs(price)}%` : `+$${price.toLocaleString()}`}
                                 </p>
                                 <p className="text-foreground/70 text-sm leading-relaxed mt-auto">
