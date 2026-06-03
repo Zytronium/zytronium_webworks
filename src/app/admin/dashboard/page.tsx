@@ -212,16 +212,16 @@ export default function AdminDashboard() {
                         {/* Contact info */}
                         <Section title="Contact">
                             <Field label="Client Name" value={selectedOrder.name} />
-                            <Field label="Business" value={selectedOrder.business} />
-                            <Field label="Email" value={selectedOrder.email} />
-                            <Field label="Phone" value={selectedOrder.phone} />
+                            <Field label="Business or Organization" value={selectedOrder.business} />
+                            <Field label="Email Address" value={selectedOrder.email} />
+                            <Field label="Phone Number" value={selectedOrder.phone === "" ? "Not Provided" : selectedOrder.phone} />
                             <Field label="Location" value={selectedOrder.location} />
                         </Section>
 
                         {/* Project info */}
                         <Section title="Project">
-                            <Field label="Scope" value={selectedOrder.scope} />
-                            <Field label="Features" value={
+                            <Field label="Project Scope" value={selectedOrder.scope} />
+                            <Field label="Extra Features" value={
                                 (JSON.parse(selectedOrder.features) as string[]).join(", ") || "None"
                             } />
                             {selectedOrder.estimatedMin != null && (
@@ -229,9 +229,9 @@ export default function AdminDashboard() {
                                     `$${selectedOrder.estimatedMin.toLocaleString()} – $${selectedOrder.estimatedMax?.toLocaleString()}`
                                 } />
                             )}
-                            <Field label="Domain" value={selectedOrder.domain} />
-                            <Field label="Hosting" value={selectedOrder.hosting} />
-                            <Field label="Showcase" value={selectedOrder.showcase} />
+                            <Field label="Domain Acquired" value={selectedOrder.domain} />
+                            <Field label="Hosting Plans Finalized" value={selectedOrder.hosting} />
+                            <Field label="Showcase Consent" value={selectedOrder.showcase} />
                             <div>
                                 <span className="block text-foreground/40 text-xs uppercase tracking-widest mb-1">Description</span>
                                 <p className="text-foreground/80 text-sm leading-relaxed whitespace-pre-wrap">{selectedOrder.projectDescription}</p>
