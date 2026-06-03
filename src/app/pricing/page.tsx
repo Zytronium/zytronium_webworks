@@ -28,7 +28,7 @@ export default function PricingPage() {
 
                 {/* Scope Pricing Cards */}
                 <h2 className="text-3xl font-bold mb-6 text-center">Project Scope</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div className="grid grid-cols-1 mdsm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                     {Object.entries(pricingMap).map(([scope, [min, max]]) => (
                         <div
                             key={scope}
@@ -39,9 +39,13 @@ export default function PricingPage() {
                         >
                             <h3 className="text-xl font-bold mb-3 text-primary">{scope}</h3>
                             <div className="text-3xl font-bold mb-2">
-                                ${min.toLocaleString()} - ${max.toLocaleString()}
+                                {min === 0 && max == 0 ? "Custom Quote" : `$${min.toLocaleString()} - $${max.toLocaleString()}`}
+
                             </div>
-                            <p className="text-foreground/60 text-sm mb-3">Starting range</p>
+                            {!(min === 0 && max === 0) && (
+                                <p className="text-foreground/60 text-sm mb-3">Starting range</p>
+                            )}
+
                             <p className="text-foreground/70 text-sm leading-relaxed">
                                 {scopeDescriptions[scope]}
                             </p>

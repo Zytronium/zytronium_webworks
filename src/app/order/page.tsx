@@ -55,6 +55,12 @@ export default function PricingPage() {
         return {min: Math.round(min), max: Math.round(max)};
     };
 
+    const isCustomQuoteScope = () => {
+        if (!selectedScope) return false;
+        const [min, max] = pricingMap[selectedScope as keyof typeof pricingMap];
+        return min === 0 && max === 0;
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log({selectedScope, selectedFeatures, formData});
@@ -110,7 +116,7 @@ export default function PricingPage() {
                                                     {scope}
                                                 </span>
                                                 <span className="text-primary font-bold text-sm">
-                                                    ${pricingMap[scope as keyof typeof pricingMap][0].toLocaleString()} - ${pricingMap[scope as keyof typeof pricingMap][1].toLocaleString()}
+                                                    {pricingMap[scope as keyof typeof pricingMap][0] === 0 && pricingMap[scope as keyof typeof pricingMap][1] == 0 ? "Custom Quote" : `$${pricingMap[scope as keyof typeof pricingMap][0].toLocaleString()} - $${pricingMap[scope as keyof typeof pricingMap][1].toLocaleString()}`}
                                                 </span>
                                             </div>
                                             <span className="block text-foreground/60 text-sm">
@@ -187,8 +193,9 @@ export default function PricingPage() {
                                     {selectedScope && (
                                         <div className="text-right">
                                             <div className="text-4xl font-bold text-accent">
-                                                ${calculateTotal().min.toLocaleString()} -
-                                                ${calculateTotal().max.toLocaleString()}
+                                                {isCustomQuoteScope()
+                                                    ? "Custom Quote"
+                                                    : `$${calculateTotal().min.toLocaleString()} - $${calculateTotal().max.toLocaleString()}`}
                                             </div>
                                             <p className="text-foreground/60 text-sm mt-1">
                                                 {selectedFeatures.includes("Other") && "* Custom features will affect final price"}
