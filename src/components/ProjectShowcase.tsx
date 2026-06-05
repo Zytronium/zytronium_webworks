@@ -36,17 +36,17 @@ const PROJECTS: Project[] = [
         screenshot: "/images/projects/stellicast.webp"
     },
     {
-        id: "luminous",
-        title: "Luminous",
-        category: "Personal Project",
-        description: "An online chat app for students and graduates of Atlas School. Built-in cross-platform messaging between the Luminous client and a Discord server.",
-        tags: ["Next.js", "React", "TailwindCSS", "TypeScript", "Electron", "Python"],
-        accent: "#09e1ba",
-        accentVar: "--primary",
+        id: "tic-website",
+        title: "TIC Concept",
+        category: "Concept Project",
+        description: "A scrapped client website prototype design rebranded and completed to showcase what similar future clients will be getting.",
+        tags: ["Next.js", "React", "TailwindCSS", "TypeScript"],
+        accent: "#28b240",
+        accentVar: "--tertiary",
         featured: true,
-        href: "https://lmns.vercel.app",
-        screenshot: "/images/projects/luminous.webp",
-        gradient: "linear-gradient(135deg, #001a1a 0%, #003333 40%, #09e1ba22 100%)",
+        href: "https://tic-concept.vercel.app/",
+        screenshot: "/images/projects/tic-concept.webp",
+        gradient: "linear-gradient(135deg, #001a0a 0%, #003320 40%, #28b24018 100%)",
     },
     {
         id: "star-trek-battle-engine",
@@ -60,6 +60,19 @@ const PROJECTS: Project[] = [
         href: "https://startrekbattlesim.zytronium.dev/",
         screenshot: "/images/projects/star-trek-battle-engine.webp",
         gradient: "linear-gradient(135deg, #001120 0%, #002240 40%, #0088ff22 100%)",
+    },
+    {
+        id: "luminous",
+        title: "Luminous",
+        category: "Personal Project",
+        description: "An online chat app for students and graduates of Atlas School. Built-in cross-platform messaging between the Luminous client and a Discord server.",
+        tags: ["Next.js", "React", "TailwindCSS", "TypeScript", "Electron", "Python"],
+        accent: "#09e1ba",
+        accentVar: "--primary",
+        featured: false,
+        href: "https://lmns.vercel.app",
+        screenshot: "/images/projects/luminous.webp",
+        gradient: "linear-gradient(135deg, #001a1a 0%, #003333 40%, #09e1ba22 100%)",
     },
     {
         id: "satire-dev-blog",
@@ -86,19 +99,7 @@ const PROJECTS: Project[] = [
         href: "https://tulsagluedobbers-remaster.zytronium.dev/",
         screenshot: "/images/projects/tgd-remaster.webp",
         gradient: "linear-gradient(135deg, #001a2e 0%, #003855 40%, #6ddbff18 100%)",
-    },
-    {
-        id: "oktia-website",
-        title: "OKTIA Website Prototype",
-        category: "Client Project",
-        description: "An early WIP prototype of the Oklahoma Technology and Innovation Association's website. Not in production yet.",
-        tags: ["Next.js", "React", "TailwindCSS", "TypeScript"],
-        accent: "#28b240",
-        accentVar: "--tertiary",
-        featured: false,
-        href: "https://www.oktia.org/",
-        gradient: "linear-gradient(135deg, #001a0a 0%, #003320 40%, #28b24018 100%)",
-    },
+    }
 ];
 
 const FEATURED = PROJECTS.filter((p) => p.featured);
