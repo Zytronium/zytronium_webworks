@@ -368,7 +368,7 @@ export default function DealsSection() {
                             Deals
                         </h2>
                         <p className="text-sm text-foreground/40 max-w-xs text-right hidden sm:block">
-                            Discounts applied automatically at signing — no promo codes required.
+                            Discounts applied automatically at signing.
                         </p>
                     </div>
 
