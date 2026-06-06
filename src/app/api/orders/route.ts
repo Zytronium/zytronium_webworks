@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { orders } from "@/lib/schema";
+import { sendOrderNotification } from "@/lib/email";
 
 export async function POST(req: NextRequest) {
     try {
@@ -34,8 +35,12 @@ export async function POST(req: NextRequest) {
             estimatedMax: estimatedMax ?? null,
         }).returning();
 
-        // NOTE: Email notification hook goes here later.
-        // await sendOrderNotification(newOrder[0]);
+        try {
+            await sendOrderNotification(newOrder[0]);
+        } catch (emailErr) {
+            // Don't fail the request if email fails, just log it
+            console.error("[email notification]", emailErr);
+        }
 
         return NextResponse.json({ success: true, id: newOrder[0].id }, { status: 201 });
     } catch (err) {
