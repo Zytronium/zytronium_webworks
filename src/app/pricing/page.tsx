@@ -1,4 +1,5 @@
 import {pricingMap, additionalFeatures, scopeDescriptions, featureDescriptions} from '@/lib/pricing';
+import Link from "next/link";
 
 export default function PricingPage() {
     return (
@@ -111,13 +112,15 @@ export default function PricingPage() {
                         </p>
                     </div>
                     <div id="discount-details" className="p-4 border border-tertiary-darker/40 rounded-lg bg-tertiary-darker/5">
-                        <p className="text-foreground/70 text-xs leading-relaxed">
-                            <strong><span className="text-tertiary-muted text-lg">*</span>:</strong>{" "}
+                        <p className="text-foreground/70 text-sm leading-relaxed">
+                            <strong><span className="text-tertiary-muted"><span className="text-lg">*</span>Deals</span>:</strong>{" "}
                             The first three customers to sign a project agreement will receive 25% off
                             their project total. The next two customers will receive 15% off. Discounts
                             are applied before taxes (if taxes are applicable in your location) and are
                             subject to change or withdrawal at any time. Discounts do not apply to future
                             paid revisions. This offer is limited to one project per customer or business.
+                            See <Link href="/#deals" className="text-primary font-bold hover:underline">Deals</Link>{" "}
+                            section on the home page for more details.
                         </p>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import SectionLabel from "@/components/SectionLabel";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -452,18 +453,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     );
 }
 
-// ─── Section header ───────────────────────────────────────────────────────────
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-    return (
-        <div className="flex items-center gap-3 mb-2">
-            <span className="w-1 h-1 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-bold tracking-[3px] uppercase text-primary/60">{children}</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-primary/20 to-transparent" />
-        </div>
-    );
-}
-
 // ─── Main Showcase Section ────────────────────────────────────────────────────
 
 export default function ProjectShowcase() {
@@ -488,8 +477,7 @@ export default function ProjectShowcase() {
                 <div className="mb-12">
                     <SectionLabel>Showcase</SectionLabel>
                     <h2
-                        className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground"
-                        style={{ fontFamily: "Aquire, sans-serif" }}
+                        className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground font-[Aquire]"
                     >
                         Portfolio
                     </h2>
