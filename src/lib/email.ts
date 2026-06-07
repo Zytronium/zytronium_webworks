@@ -20,20 +20,20 @@ export async function sendOrderNotification(order: Order) {
                 </p>
 
                 <table style="width:100%;border-collapse:collapse;">
-                    ${row("Name",     order.name)}
-                    ${row("Business", order.business)}
-                    ${row("Email",    order.email)}
-                    ${row("Phone",    order.phone || "Not provided")}
+                    ${row("Client Name", order.name)}
+                    ${row("Business or Organization", order.business)}
+                    ${row("Email Address", order.email)}
+                    ${row("Phone Number", order.phone || "Not provided")}
                     ${row("Location", order.location)}
                     <tr><td colspan="2" style="padding:12px 0;border-bottom:1px solid #00b2ff22;"></td></tr>
-                    ${row("Scope",    order.scope)}
-                    ${row("Features", features.length ? features.join(", ") : "None")}
+                    ${row("Project Scope",    order.scope)}
+                    ${row("Extra Features", features.length ? features.join(", ") : "None")}
                     ${order.estimatedMin != null
             ? row("Estimate", `$${order.estimatedMin.toLocaleString()} – $${order.estimatedMax?.toLocaleString()}`)
             : ""}
                     ${row("Domain",   order.domain)}
                     ${row("Hosting",  order.hosting)}
-                    ${row("Showcase", order.showcase)}
+                    ${row("Showcase Consent", order.showcase)}
                 </table>
 
                 <div style="margin-top:24px;padding:16px;border:1px solid #00b2ff22;background:#00b2ff08;">
