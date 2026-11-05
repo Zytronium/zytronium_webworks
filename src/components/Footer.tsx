@@ -23,7 +23,7 @@ const SOCIAL_LINKS = [
     {
         href: "mailto:webworks@zytronium.dev",
         label: "Email",
-        disabled: true,
+        disabled: false,
         icon: (
             <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current" strokeWidth="1.75" aria-hidden="true">
                 <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -119,13 +119,12 @@ export default function Footer() {
                             <p className="text-sm text-foreground/50 mb-4 leading-relaxed">
                                 Ready to build something great? Let&apos;s talk about your project.
                             </p>
-                            <a     /* mailto:webworks@zytronium.dev */
-                                href="mailto:zytronium@proton.me" /* text-foreground-60 hover:text-primary mb-5 */
-                                className="block text-sm text-foreground/20 hover:text-primary/30 cursor-not-allowed transition-colors duration-200 break-all"
+                            <a
+                                href="mailto:webworks@zytronium.dev"
+                                className="block text-sm text-foreground-60 hover:text-primary mb-5 transition-colors duration-200 break-all"
                             >
                                 webworks@zytronium.dev
                             </a>
-                            <p className="text-xs text-foreground/50 mb-5">Due to technical difficulties, this email address is temporarily non-functional. Please refrain from emailing it until this notice is no longer displaying here. Until then, feel free to email zytronium@proton.me</p>
 
                             {/* CTA button */}
                             <a
